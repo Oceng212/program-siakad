@@ -43,8 +43,8 @@ if(isset($_POST["ubah"])){
                 </strong>
 				</div>
                 <div class="col-9" style="width:75%; float:right;">
-				<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="float:right;">
-				Update
+				<button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="float:right; color:white;">
+				Ubah
 				</button>
 				</div>
 

@@ -39,7 +39,7 @@ if(isset($_POST["ubah"])){
 <div class="col-12">
        <div class="row">
             <div class="col-3" style="width:25%;">
-                <strong>  <h2>Data Kelas</h2>
+                <strong>  <h2>Penilaian Siswa</h2>
                 </strong>
 				</div>
                

@@ -58,7 +58,7 @@ if(isset($_POST["submit"])){
 		<div class="row">
             <h4>--- Senin ---</h4>
             <?php 
-            $sql1=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Senin' ORDER BY jam ASC");?>
+            $sql1=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Senin' ORDER BY id ASC");?>
 			<table style = "text-align:center;">
 				<tr>
                     <th>Jam</th>
@@ -81,7 +81,7 @@ if(isset($_POST["submit"])){
 
             <h4>--- Selasa ---</h4>
             <?php 
-            $sql2=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Selasa' ORDER BY jam ASC");?>
+            $sql2=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Selasa' ORDER BY id ASC");?>
 			<table style = "text-align:center;">
 				<tr>
                     <th>Jam</th>
@@ -104,7 +104,7 @@ if(isset($_POST["submit"])){
 
             <h4>--- Rabu ---</h4>
             <?php 
-            $sql3=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Rabu' ORDER BY jam ASC");?>
+            $sql3=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Rabu' ORDER BY id ASC");?>
             <table style = "text-align:center;">
                 <tr>
                     <th>Jam</th>
@@ -127,7 +127,7 @@ if(isset($_POST["submit"])){
 
             <h4>--- Kamis ---</h4>
             <?php 
-            $sql4=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Kamis' ORDER BY jam ASC");?>
+            $sql4=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Kamis' ORDER BY id ASC");?>
             <table style = "text-align:center;">
                 <tr>
                     <th>Jam</th>
@@ -150,7 +150,7 @@ if(isset($_POST["submit"])){
 
             <h4>--- Jumat ---</h4>
             <?php 
-            $sql5=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Jumat' ORDER BY jam ASC");?>
+            $sql5=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Jumat' ORDER BY id ASC");?>
             <table style = "text-align:center;">
                 <tr>
                     <th>Jam</th>

@@ -26,7 +26,7 @@
 				<tr>					
 					<td><?= $rows["NIP"];?></td>
 					<td><?= $rows["nama"];?></td>
-					<td><a href="" style="color: white; text-decoration:none;" class="badge bg-danger float-right ml-1"
+					<td><a href="hapus-guru.php?NIP=<?= $rows["NIP"]?>" style="color: white; text-decoration:none;" class="badge bg-danger float-right ml-1"
                     onclick = "return confirm('yakin?');">Hapus</a>
   					<a href="detail-guru.php?nip=<?= $rows["NIP"]?>" style="color: white; text-decoration:none;" class="badge bg-primary float-right ml-1">Details</a></td>
 				</tr>

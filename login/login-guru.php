@@ -7,10 +7,7 @@ session_start();
 
 $status_awal = "guru";
 
-// register 
-if (isset($_POST["register"])) {
-  header('location:register.php');
-}
+
 
 // cek apakah sudah menekan tombol submit atau belum 
 if(isset($_POST["submit"])){

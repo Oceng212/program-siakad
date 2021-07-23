@@ -8,10 +8,6 @@ session_start();
 //get status
 $status_awal = "siswa";
 
-// register 
-if (isset($_POST["register"])) {
-  header('location:register.php');
-}
 
 // cek apakah sudah menekan tombol submit atau belum 
 if(isset($_POST["submit"])){
@@ -171,15 +167,9 @@ if(isset($_POST["submit"])){
       </svg> Password</label>
       </div>
 
-    <?php if ($status_awal == "guru"): ?>
-         <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Log in</button>
-         <button class="w-100 btn btn-lg btn-primary mt-1" type="submit" name="register">Register</button>
-    <?php elseif($status_awal == "siswa"): ?>
+   
           <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Log in</button>
-          <button class="w-100 btn btn-lg btn-primary mt-1" type="submit" name="register">Register</button>
-    <?php else: ?>
-          <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Log in</button>
-    <?php endif; ?>
+    
   
 
         <center>

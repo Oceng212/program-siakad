@@ -16,8 +16,8 @@ while ($data = mysqli_fetch_assoc($cek)){
 
 <div class="col-12">
        <div class="row">
-            <div class="col-3" style="width:50%;">
-                <strong>  <h2 style="text-transform: uppercase;">Jadwal KBM <?= $kelas; ?></h2>
+            <div class="col-3" style="width:100%;">
+                <strong>  <h2 style="text-transform: uppercase; text-align:center;">Jadwal KBM <?= $kelas; ?></h2>
                 </strong>
 				</div>
               </div>

@@ -207,7 +207,7 @@ $nim_nip = $_SESSION["nisn/nip"];
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="nilai.php">
+            <a class="nav-link" href="nilai-index.php">
               <span data-feather="shopping-cart"></span>
               Nilai
             </a>

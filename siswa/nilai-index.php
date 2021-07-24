@@ -56,4 +56,7 @@ include_once '../templates/header.php';
     </div>
   </div>      
 
+<div class="container mt-3">
+  <p style="color: red; text-transform: capitalize;">*) klik sesuai dengan kelas dan semestermu saat ini </p>
+</div>
 <?php include_once '../templates/footer.php';?>

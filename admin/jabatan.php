@@ -60,7 +60,7 @@ if(isset($_POST["ubah"])){
 
 <div class="container">
 		<div class="row">
-			<table style = "text-align:center;">
+			<table class="table table-borderless" style = "text-align:center;">
 				<tr>
 					<th>Cek</th>
 					<th>NIP</th>

@@ -59,7 +59,7 @@ if(isset($_POST["submit"])){
             <h4>--- Senin ---</h4>
             <?php 
             $sql1=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Senin' ORDER BY id ASC");?>
-			<table style = "text-align:center;">
+			<table class="table table-borderless" style = "text-align:center;">
 				<tr>
                     <th>Jam</th>
                     <th>Mata pelajaran</th>
@@ -82,7 +82,7 @@ if(isset($_POST["submit"])){
             <h4>--- Selasa ---</h4>
             <?php 
             $sql2=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Selasa' ORDER BY id ASC");?>
-			<table style = "text-align:center;">
+			<table class="table table-borderless" style = "text-align:center;">
 				<tr>
                     <th>Jam</th>
                     <th>Mata pelajaran</th>
@@ -105,7 +105,7 @@ if(isset($_POST["submit"])){
             <h4>--- Rabu ---</h4>
             <?php 
             $sql3=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Rabu' ORDER BY id ASC");?>
-            <table style = "text-align:center;">
+            <table class="table table-borderless" style = "text-align:center;">
                 <tr>
                     <th>Jam</th>
                     <th>Mata pelajaran</th>
@@ -128,7 +128,7 @@ if(isset($_POST["submit"])){
             <h4>--- Kamis ---</h4>
             <?php 
             $sql4=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Kamis' ORDER BY id ASC");?>
-            <table style = "text-align:center;">
+            <table class="table table-borderless" style = "text-align:center;">
                 <tr>
                     <th>Jam</th>
                     <th>Mata pelajaran</th>
@@ -151,7 +151,7 @@ if(isset($_POST["submit"])){
             <h4>--- Jumat ---</h4>
             <?php 
             $sql5=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Jumat' ORDER BY id ASC");?>
-            <table style = "text-align:center;">
+            <table class="table table-borderless" style = "text-align:center;">
                 <tr>
                     <th>Jam</th>
                     <th>Mata pelajaran</th>

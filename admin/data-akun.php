@@ -63,7 +63,7 @@ if(isset($_POST["submit"])){
 
 <div class="container">
     <div class="row">
-      <table style = "text-align:center;">
+      <table class="table table-borderless" style = "text-align:center;">
         <tr>
           <th>NISN/NIP</th>
           <th>Username</th>

@@ -55,7 +55,7 @@ if(isset($_POST["ubah"])){
 
 <div class="container">
 		<div class="row">
-			<table style = "text-align:center;">
+			<table class="table table-borderless" style = "text-align:center;">
 				<tr>
                     <th>Cek</th>
 					<th>Kelas</th>
@@ -68,7 +68,7 @@ if(isset($_POST["ubah"])){
                 <td><input type="checkbox" name="data[]" value=<?= $rows["id"]; ?>></td>
 				<td><?= $rows["kelas"];?></td>
 				<td><?= $rows["walikelas"];?></td>
-				<td><a href="detail-kelas.php?kelas=<?= $rows["kelas"];?>" style="color: white; text-decoration:none;" class="badge bg-primary float-right ml-1">Lihat</a>
+				<td><a href="detail-kelas.php?kelas=<?= $rows["kelas"];?>" style="color: white; text-decoration:none;" class="btn btn-primary btn-sm">Lihat</a>
   				</li></td>
                 
 			<?php endwhile;?>

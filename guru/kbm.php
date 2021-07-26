@@ -16,28 +16,24 @@ while ($guru = mysqli_fetch_assoc($sql)){
 
 ?>
 
-<div class="col-12">
-       <div class="row">
-            <div class="col-3" style="width:100%;">
-                <strong>  <h2 style="text-align: center;">Jadwal KBM</h2>
-                </strong>
-				</div>
-              </div>
-              </div>
 
-<br>
 
-<form action="" method="post">
 <div class="container">
-		<div class="row">
-            <h4>--- Senin ---</h4>
+    <h2 style="text-transform: uppercase;">Jadwal KBM</h2>
+		<div class="row mt-4">
             <?php 
             $sql1=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE pengajar = '$nama' AND hari='Senin' ORDER BY jam ASC");?>
-			<table style = "text-align:center;">
+			<table class="table table-borderless" style="text-align: center;">
+                <tr class="table-primary">
+                    <td></td>
+                    <td> <h4>--- Senin ---</h4> </td>
+                    <td></td>    
+                </tr>
+
 				<tr>
-                    <th>Jam</th>
-                    <th>Mata pelajaran</th>
-                    <th>Kelas</th>
+                    <th scope="col">Jam</th>
+                    <th scope="col">Mata pelajaran</th>
+                    <th scope="col">Kelas</th>
 				</tr>
             <?php while($senin = mysqli_fetch_assoc($sql1)):?>
                 <tr>
@@ -46,18 +42,22 @@ while ($guru = mysqli_fetch_assoc($sql)){
                     <td><?= $senin["kelas"]?></td>
 				</tr>
             <?php endwhile;?>
-			  			
-            </table>
+            
 
-            <h4>--- Selasa ---</h4>
+            
             <?php 
             $sql2=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE pengajar = '$nama' AND hari='Selasa' ORDER BY jam ASC");?>
-			<table style = "text-align:center;">
+			     <tr class="table-success">
+                    <td></td>
+                    <td> <h4>--- Selasa ---</h4> </td>
+                    <td></td>    
+                </tr>
+
 				<tr>
-                    <th>Jam</th>
-                    <th>Mata pelajaran</th>
-                    <th>Kelas</th>
-				</tr>
+                    <th scope="col">Jam</th>
+                    <th scope="col">Mata pelajaran</th>
+                    <th scope="col">Kelas</th>
+                </tr>
             <?php while($selasa = mysqli_fetch_assoc($sql2)):?>
                 <tr>
                     <td><?= $selasa["jam"]?></td>
@@ -66,16 +66,20 @@ while ($guru = mysqli_fetch_assoc($sql)){
 				</tr>
             <?php endwhile;?>
 			  			
-            </table>
 
-            <h4>--- Rabu ---</h4>
+            
             <?php 
             $sql3=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE pengajar = '$nama' AND hari='Rabu' ORDER BY jam ASC");?>
-            <table style = "text-align:center;">
+                <tr class="table-danger">
+                    <td></td>
+                    <td> <h4>--- Rabu ---</h4> </td>
+                    <td></td>    
+                </tr>
+
                 <tr>
-                    <th>Jam</th>
-                    <th>Mata pelajaran</th>
-                    <th>Kelas</th>
+                    <th scope="col">Jam</th>
+                    <th scope="col">Mata pelajaran</th>
+                    <th scope="col">Kelas</th>
                 </tr>
             <?php while($rabu = mysqli_fetch_assoc($sql3)):?>
                 <tr>
@@ -85,16 +89,21 @@ while ($guru = mysqli_fetch_assoc($sql)){
                 </tr>
             <?php endwhile;?>
                         
-            </table>
+          
 
-            <h4>--- Kamis ---</h4>
+           
             <?php 
             $sql4=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE pengajar = '$nama' AND hari='Kamis' ORDER BY jam ASC");?>
-            <table style = "text-align:center;">
+                <tr class="table-warning">
+                    <td></td>
+                    <td> <h4>--- Kamis ---</h4> </td>
+                    <td></td>    
+                </tr>
+
                 <tr>
-                    <th>Jam</th>
-                    <th>Mata pelajaran</th>
-                    <th>Kelas</th>
+                    <th scope="col">Jam</th>
+                    <th scope="col">Mata pelajaran</th>
+                    <th scope="col">Kelas</th>
                 </tr>
             <?php while($kamis = mysqli_fetch_assoc($sql4)):?>
                 <tr>
@@ -104,16 +113,21 @@ while ($guru = mysqli_fetch_assoc($sql)){
                 </tr>
             <?php endwhile;?>
                         
-            </table>
+         
 
-            <h4>--- Jumat ---</h4>
+           
             <?php 
             $sql5=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE pengajar = '$nama' AND hari='Jumat'ORDER BY jam ASC");?>
-            <table style = "text-align:center;">
+                <tr class="table-secondary">
+                    <td></td>
+                    <td> <h4>--- Jumat ---</h4> </td>
+                    <td></td>    
+                </tr>
+
                 <tr>
-                    <th>Jam</th>
-                    <th>Mata pelajaran</th>
-                    <th>Kelas</th>
+                    <th scope="col">Jam</th>
+                    <th scope="col">Mata pelajaran</th>
+                    <th scope="col">Kelas</th>
                 </tr>
             <?php while($jumat = mysqli_fetch_assoc($sql5)):?>
                 <tr>

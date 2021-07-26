@@ -16,7 +16,7 @@
 <div class="container">
 		<div class="row">
 
-			<table style = "text-align:center;">
+			<table class="table table-borderless" style = "text-align:center;">
 				<tr>
 					<th>NISN</th>
 					<th>Nama</th>
@@ -26,9 +26,9 @@
 				<tr>					
 					<td><?= $rows["NISN"];?></td>
 					<td><?= $rows["nama"];?></td>
-					<td><a href="hapus-siswa.php?nisn=<?= $rows["NISN"]?>" style="color: white; text-decoration:none;" class="badge bg-danger float-right ml-1"
+					<td><a href="hapus-siswa.php?nisn=<?= $rows["NISN"]?>" style="color: white; text-decoration:none;" class="btn btn-danger btn-sm"
                     onclick = "return confirm('yakin?');">Hapus</a>
-  					<a href="details-siswa.php?nisn=<?= $rows["NISN"]?>" style="color: white; text-decoration:none;" class="badge bg-primary float-right ml-1">Details</a></td>
+  					<a href="details-siswa.php?nisn=<?= $rows["NISN"]?>" style="color: white; text-decoration:none;" class="btn btn-primary btn-sm">Details</a></td>
 				</tr>
 			<?php endwhile;?>
 			</table>

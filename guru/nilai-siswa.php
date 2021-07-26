@@ -10,8 +10,9 @@
     	$mapel = $data["mapel"];
     }
 
-// set database untuk siswa yang sudah ditentukan kelasnya 
+// set database untuk siswa yang sudah ditentukan kelasnya dan semester 
     $kelas_utama = $_GET["kelas"];
+    $semester = $_GET["semester"];
     $sql = "SELECT * FROM nilai_siswa WHERE kelas = '$kelas_utama' AND mapel ='$mapel'";
     $exec = mysqli_query($koneksi,$sql);
 
@@ -27,7 +28,8 @@
     	$nilai_UAS = $_POST["UAS"];
     	$nilai_absensi = $_POST["absensi"];
     	$nilai_sikap = $_POST["sikap"];
-    	$nilai_praktek = $_POST["praktek"];
+    	$keterampilan = $_POST["keterampilan"];
+      $nilai_pengetahuan = ((($nilai_harian + $nilai_absensi + $nilai_sikap)/3)*(4/10))+((3/10)*$nilai_UTS)+((3/10)*$nilai_UAS);
 
     	// mengambil nisn di table kelas_siswa
 		$sql_nama = mysqli_query($koneksi,"SELECT * FROM kelas_siswa WHERE nama ='$nama_siswa' AND kelas ='$kelas'");
@@ -37,7 +39,7 @@
 
 
     	// cek apakah data yang kosong atau tidak
-    	if (!empty($NISN) && !empty($nama_siswa) && !empty($pelajaran) && !empty($nilai_harian) && !empty($nilai_UTS) && !empty($nilai_UAS) && !empty($nilai_absensi) && !empty($nilai_absensi) && !empty($nilai_praktek)){
+    	if (!empty($NISN) && !empty($nama_siswa) && !empty($pelajaran) && !empty($nilai_harian) && !empty($nilai_UTS) && !empty($nilai_UAS) && !empty($nilai_absensi) && !empty($nilai_absensi) && !empty($keterampilan)){
 
     		//cek apakah data sudah ada atau belum 
     		$sql_cek = mysqli_query($koneksi,"SELECT * FROM nilai_siswa WHERE nama = '$nama_siswa' AND mapel = '$pelajaran'");
@@ -50,17 +52,17 @@
     				</script>";
     		} else {
 
-    			$sql_input = "INSERT INTO nilai_siswa VALUES ('','$pelajaran','$NISN','$nama_siswa','$kelas','$nilai_harian','$nilai_UTS','$nilai_UAS','$nilai_absensi','$nilai_sikap','$nilai_praktek')";
+    			$sql_input = "INSERT INTO nilai_siswa VALUES ('','$pelajaran','$NISN','$nama_siswa','$kelas','$semester','$nilai_harian','$nilai_UTS','$nilai_UAS','$nilai_absensi','$nilai_sikap','$keterampilan','$nilai_pengetahuan')";
     			$exec = mysqli_query($koneksi,$sql_input);
     			if ($exec) {
     				echo "<script>
     					alert('Data Berhasil Ditambahkan');
-    					document.location.href = 'nilai-siswa.php?kelas=$kelas';
+    					document.location.href = 'nilai-siswa.php?kelas=$kelas&semester=$semester';
     				</script>";
     			} else {
     				echo "<script>
     					alert('Data Gagal Ditambahkan');
-    					document.location.href = 'nilai-siswa.php?kelas=$kelas';
+    					document.location.href = 'nilai-siswa.php?kelas=$kelas&semester=$semester';
     				</script>";
     			}
     		}
@@ -70,7 +72,7 @@
     	} else {
     		echo "<script>
     					alert('Lengkapi Data !!');
-    					document.location.href = 'nilai-siswa.php?kelas=$kelas';
+    					document.location.href = 'nilai-siswa.php?kelas=$kelas&semester=$semester';
     				</script>";
     	}
     }
@@ -95,7 +97,7 @@
 
 <div class="container">
 		<div class="row">
-			<table style = "text-align:center;">
+			<table class="table table-borderless" style = "text-align:center;">
 				<tr>
 					<th>NIP</th>
 					<th>Nama</th>
@@ -104,7 +106,8 @@
 					<th>UAS</th>
 					<th>Absensi</th>
 					<th>Sikap</th>
-					<th>Praktek</th>
+					<th>Keterampilan</th>
+          <th>Pengetahuan</th>
 					<th>Aksi</th>
 
 				</tr>
@@ -118,11 +121,12 @@
 				<td><?= $rows["UAS"] ?></td>
 				<td><?= $rows["nilai_absen"] ?></td>
 				<td><?= $rows["nilai_sikap"] ?></td>
-				<td><?= $rows["nilai_praktek"] ?></td>
+				<td><?= $rows["keterampilan"] ?></td>
+        <td><?= $rows["pengetahuan"]?></td>
 				<td>
 					<div class="d-grid gap-2 d-md-block">
-						<a class="btn btn-success btn-sm" href="tambah-nilai.php?kelas=<?= $kelas_utama;?>&nisn=<?= $rows["NISN"] ?>&nama=<?= $rows["nama"] ?>">Tambah</a>
-  						<a class="btn btn-warning btn-sm" href="ubah-nilai.php?id=<?= $rows["id"] ?> ?>">Ubah</a>
+						<a class="btn btn-success btn-sm" href="tambah-raport.php?kelas=<?= $kelas_utama;?>&nisn=<?= $rows["NISN"]?>&nama=<?= $rows["nama"] ?>">Tambah</a>
+  						<a class="btn btn-warning btn-sm" href="ubah-raport.php?id=<?= $rows["id"]?>&semester=<?= $semester ?>">Ubah</a>
 					</div>
 				</td>
 				</tr>
@@ -143,7 +147,8 @@
       <div class="modal-body">
       	<input type="hidden" name="mapel" value="<?= $mapel; ?>">
 
-      	<input type="hidden" name="kelas" value="<?= $kelas_utama ?>">
+      	<input type="hidden" name="kelas" value="<?= $kelas_utama; ?>">
+
      
         <div class="form-group">
 			    <label for="nama">Nama Siswa</label>
@@ -185,8 +190,8 @@
   			</div>
 
   			<div class="form-group">
-    			<label for="praktek">Nilai Praktek</label>
-    			<input type="text" class="form-control" id="praktek" name="praktek">
+    			<label for="keterampilan">Nilai Keterampilan</label>
+    			<input type="text" class="form-control" id="keterampilan" name="keterampilan">
   			</div>
 
       </div>

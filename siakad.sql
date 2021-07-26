@@ -105,14 +105,14 @@ CREATE TABLE `nilai_siswa` (
   `UAS` int(11) NOT NULL,
   `nilai_absen` int(11) NOT NULL,
   `nilai_sikap` int(11) NOT NULL,
-  `nilai_praktek` int(11) NOT NULL
+  `keterampilan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `nilai_siswa`
 --
 
-INSERT INTO `nilai_siswa` (`id`, `mapel`, `NISN`, `nama`, `kelas`, `nilai_harian`, `UTS`, `UAS`, `nilai_absen`, `nilai_sikap`, `nilai_praktek`) VALUES
+INSERT INTO `nilai_siswa` (`id`, `mapel`, `NISN`, `nama`, `kelas`, `nilai_harian`, `UTS`, `UAS`, `nilai_absen`, `nilai_sikap`, `keterampilan`) VALUES
 (3, 'Bahasa Inggris', 11221100, 'Taiga Dwi Anjani', 'x mipa 1', 80, 80, 80, 88, 80, 80),
 (4, 'Penjasorkes', 11219047, 'Dicky Alamsyah', 'x mipa 1', 90, 90, 80, 75, 90, 90);
 

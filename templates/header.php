@@ -175,7 +175,7 @@ $nim_nip = $_SESSION["nisn/nip"];
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="olah-nilai.php">
+            <a class="nav-link" href="olah-raport.php">
               <span data-feather="users"></span>
               Penilaian Siswa 
             </a>
@@ -207,9 +207,9 @@ $nim_nip = $_SESSION["nisn/nip"];
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="nilai-index.php">
+            <a class="nav-link" href="raport-index.php">
               <span data-feather="shopping-cart"></span>
-              Nilai
+              E - Raport
             </a>
           </li>
 

@@ -5,6 +5,7 @@ include_once '../templates/header.php';
 
 // get kelas, NISN, dan nama siswa 
 $id = $_GET["id"];
+$semester = $_GET["semester"];
 
 // ambil data dari database berdasarkan id
 $sql = mysqli_query($koneksi,"SELECT * FROM nilai_siswa WHERE id = '$id'");
@@ -18,7 +19,9 @@ while ($rows = mysqli_fetch_assoc($sql)){
   $uas = $rows["UAS"];
   $absen = $rows["nilai_absen"];
   $sikap = $rows["nilai_sikap"];
-  $praktek = $rows["nilai_praktek"];
+  $keterampilan = $rows["keterampilan"];
+
+
 
 }
 
@@ -30,19 +33,20 @@ while ($rows = mysqli_fetch_assoc($sql)){
       $nilai_UAS = $_POST["UAS"];
       $nilai_absensi = $_POST["absensi"];
       $nilai_sikap = $_POST["sikap"];
-      $nilai_praktek = $_POST["praktek"];
+      $keterampilan = $_POST["keterampilan"];
+      $pengetahuan = ((($nilai_harian + $nilai_absensi + $nilai_sikap)/3)*(4/10))+((3/10)*$nilai_UTS)+((3/10)*$nilai_UAS);
 
-          $sql_ubah = "UPDATE nilai_siswa SET nilai_harian = '$nilai_harian', UTS = '$nilai_UTS', UAS = '$nilai_UAS', nilai_absen='$nilai_absensi', nilai_sikap='$nilai_sikap', nilai_praktek='$nilai_praktek' WHERE id ='$id'";
+          $sql_ubah = "UPDATE nilai_siswa SET nilai_harian = '$nilai_harian', UTS = '$nilai_UTS', UAS = '$nilai_UAS', nilai_absen='$nilai_absensi', nilai_sikap='$nilai_sikap', keterampilan='$keterampilan', pengetahuan ='$pengetahuan' WHERE id ='$id'";
           $exec = mysqli_query($koneksi,$sql_ubah);
           if ($exec) {
             echo "<script>
               alert('Data Berhasil Diubah');
-              document.location.href = 'nilai-siswa.php?kelas=$kelas';
+              document.location.href = 'nilai-siswa.php?kelas=$kelas&semester=$semester';
             </script>";
           } else {
             echo "<script>
               alert('Data Gagal Diubah');
-              document.location.href = 'nilai-siswa.php?kelas=$kelas';
+              document.location.href = 'nilai-siswa.php?kelas=$kelas&semester=$semester';
             </script>";
           }
         }
@@ -79,8 +83,8 @@ while ($rows = mysqli_fetch_assoc($sql)){
   			</div>
 
         <div class="form-group">
-          <label for="praktek">Nilai Praktek</label>
-          <input type="text" class="form-control" id="praktek" name="praktek" value="<?= $praktek?>">
+          <label for="keterampilan">Nilai keterampilan</label>
+          <input type="text" class="form-control" id="keterampilan" name="keterampilan" value="<?= $keterampilan?>">
         </div>
 
   			<br>

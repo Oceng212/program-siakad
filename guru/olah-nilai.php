@@ -49,64 +49,23 @@ if(isset($_POST["ubah"])){
 <br>
 
 <div class="container">
-		<div class="row">
-			<table class = "table table-borderless"  style = "text-align:center;">
-				<tr>
-					<th>Kelas</th>
-					<th>Walikelas</th>
-                    <th>Siswa</th>
-				</tr>
-			<form action="" method="post">
-			<?php while($rows = mysqli_fetch_assoc($exec)):?>				
-				<tr>
-				<td><?= $rows["kelas"];?></td>
-				<td><?= $rows["walikelas"];?></td>
-				<td><a href="nilai-siswa.php?kelas=<?= $rows["kelas"];?>" style="color: white; text-decoration:none;" class="btn btn-success">Lihat</a>
-  				</li></td>
-                
-			<?php endwhile;?>
-			</table>
-			
-		</div>
-	</div>
-
-<!-- Button trigger modal -->
-
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Update Data Kelas</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+ <div class="row">
+ 	<?php while($rows = mysqli_fetch_assoc($exec)):?>
+      <div class="col-md mt-3">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body" style="text-align:center;">
+            <h5 class="card-title text-center" style="text-transform: uppercase;"><?= $rows["kelas"] ?></h5>
+            <p class="card-text" style="text-transform: capitalize;"><?= $rows["walikelas"] ?></p>
+            <div class="d-grid gap-2 col-6 mx-auto" style="width:100%;">
+            <a href="nilai-siswa.php?kelas=<?= $rows["kelas"];?>&semester=ganjil" style="color: white; text-decoration:none;" class="btn btn-success">Ganjil</a>
+             <a href="nilai-siswa.php?kelas=<?= $rows["kelas"];?>&semester=genap" style="color: white; text-decoration:none;" class="btn btn-success">Genap</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-     
-        <div class="form-group">
-			    <label for="walikelas">Wali kelas</label>
-			    <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example" id="walikelas" name="walikelas">
-				<option value="-">-</option>
-                <?php 
-                $sql_data_guru = "SELECT * FROM profil_guru";
-                $exec_guru = mysqli_query($koneksi,$sql_data_guru);
-                while($guru = mysqli_fetch_assoc($exec_guru)):
-                ?>
-                <option value="<?= $guru["nama"]?>"><?= $guru["nama"]?></option>
-			    <?php endwhile;?>
-            </optgroup>
-          </select>
-			  </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
-          <button type="submit" name="ubah" class="btn btn-success">Update</button>
-		 
-      </form>
-	
-      </div>
-    </div>
-  </div>
+    <?php endwhile; ?>
 </div>
+</div>
+
 
 <?php include_once '../templates/footer.php';?>

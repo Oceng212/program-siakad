@@ -99,6 +99,7 @@ $exec_data = mysqli_query($koneksi,$data);
     <?php endwhile; ?>
 		</table>
 	</div>
+   <a href="cetak-raport.php?nisn=<?= $NISN ?>&semester=ganjil" class="btn btn-primary">Cetak</a>
 </div>
 
 

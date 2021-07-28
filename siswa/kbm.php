@@ -11,136 +11,76 @@ while ($data = mysqli_fetch_assoc($cek)){
     $kelas = $data["kelas"];
 }
 
+function KBM($hari){
+    global $kelas;
+    global $koneksi;
+    switch($hari){
+
+        case '1':
+        $hari = "Senin";
+        break;
+
+        case '2':
+        $hari = "Selasa";
+        break;
+
+        case '3':
+        $hari = "Rabu";
+        break;
+
+        case '4':
+        $hari = "Kamis";
+        break;
+
+        case '5':
+        $hari = "Jumat";
+        break;
+
+        default:
+        $hari="";
+        break;
+
+    }
+    $sql=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='$hari' ORDER BY id ASC");
+            echo "<table class='table table-borderless' style='text-align:center;'>";
+            echo    "<thead>";
+            echo   "<tr>";
+            echo       "<td></td>";
+            echo    "<td><h3>--------- $hari --------</h3></td>";
+            echo        "<td></td>"; 
+            echo    "</tr>";
+            echo "</thead>";
+            echo "<tbody>";
+            echo   "<tr>";
+            echo   '<th scope="col">Jam</th>';
+            echo        '<th scope="col">Mata pelajaran</th>';
+            echo        '<th scope="col">Pengajar</th>';
+            echo    "</tr>";
+            while($rows = mysqli_fetch_assoc($sql)){
+            echo   "<tr>";
+            echo        "<td>".$rows["jam"]."</td>";
+            echo        "<td>".$rows["mapel"]."</td>";
+            echo        "<td>".$rows["pengajar"]."</td>";
+            }
+            echo   "</tr>";
+            echo "</tbody>";
+            echo "</table>";
+            
+
+}
 
 ?>
 
-
-<div class="container">
-    <h2 style="text-transform: uppercase;">jadwal kbm</h2>
+<h2 style="text-transform: uppercase;">jadwal kbm</h2>
+<div class="container" style="width: 800px;">
+    
     <div class="row">
-            <?php 
-            $sql1=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Senin' ORDER BY jam ASC");?>
-            <table class="table table-borderless" style="text-align:center;">
-                <thead>
-                <tr>
-                    <td><h3>--- Senin ---</h3></td>
-                    <td></td>
-                    <td></td>   
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="col">Jam</th>
-                    <th scope="col">Mata pelajaran</th>
-                    <th scope="col">Pengajar</th>
-                </tr>
-            <?php while($senin = mysqli_fetch_assoc($sql1)):?>
-                <tr>
-                    <td><?= $senin["jam"]?></td>
-                    <td><?= $senin["mapel"]?></td>
-                    <td><?= $senin["pengajar"]?></td>
-                </tr>
-            </tbody>
-            <?php endwhile;?>
-                        
-           
 
-            
-            <?php 
-            $sql2=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Selasa' ORDER BY jam ASC");?>
-            
-                <tr>
-                    <td><h3>--- Selasa ---</h3></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-                <tr>
-                    <th scope="col">Jam</th>
-                    <th scope="col">Mata pelajaran</th>
-                    <th scope="col">Pengajar</th>
-                </tr>
-            <?php while($selasa = mysqli_fetch_assoc($sql2)):?>
-                <tr>
-                    <td><?= $selasa["jam"]?></td>
-                    <td><?= $selasa["mapel"]?></td>
-                    <td><?= $selasa["pengajar"]?></td>
-                </tr>
-            <?php endwhile;?>
-                        
-            
-
-            
-            <?php 
-            $sql3=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Rabu' ORDER BY jam ASC");?>
-                
-                <tr>
-                    <td><h3>---Rabu---</h3></td>
-                    <td></td>
-                    <td></td>    
-                </tr>
-
-                <tr>
-                    <th scope="col">Jam</th>
-                    <th scope="col">Mata pelajaran</th>
-                    <th scope="col">Pengajar</th>
-                </tr>
-            <?php while($rabu = mysqli_fetch_assoc($sql3)):?>
-                <tr>
-                    <td><?= $rabu["jam"]?></td>
-                    <td><?= $rabu["mapel"]?></td>
-                    <td><?= $rabu["pengajar"]?></td>
-                </tr>
-            <?php endwhile;?>
-                        
-            
-            <?php 
-            $sql4=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Kamis' ORDER BY jam ASC");?>
-                <tr>
-                    <td><h3>---Kamis---</h3></td>
-                    <td></td>
-                    <td></td>    
-                </tr>
-
-                <tr>
-                    <th scope="col">Jam</th>
-                    <th scope="col">Mata pelajaran</th>
-                    <th scope="col">Pengajar</th>
-                </tr>
-            <?php while($kamis = mysqli_fetch_assoc($sql4)):?>
-                <tr>
-                    <td><?= $kamis["jam"]?></td>
-                    <td><?= $kamis["mapel"]?></td>
-                    <td><?= $kamis["pengajar"]?></td>
-                </tr>
-            <?php endwhile;?>
-                        
-            
-
-            
-            <?php 
-            $sql5=mysqli_query($koneksi,"SELECT * FROM pelajaran WHERE kelas='$kelas' AND hari='Jumat' ORDER BY jam ASC");?>
-           <tr>
-                    <td><h3>---Jumat--</h3></td>
-                    <td></td>
-                    <td></td>    
-                </tr>
-
-                <tr>
-                    <th scope="col">Jam</th>
-                    <th scope="col">Mata pelajaran</th>
-                    <th scope="col">Pengajar</th>
-                </tr>
-            <?php while($jumat = mysqli_fetch_assoc($sql5)):?>
-                <tr>
-                    <td><?= $jumat["jam"]?></td>
-                    <td><?= $jumat["mapel"]?></td>
-                    <td><?= $jumat["pengajar"]?></td>
-                </tr>
-            <?php endwhile;?>
-            
-            <tr></tr>            
-            </table>
+    <?php 
+    for ($no=1;$no<=5;$no++){
+        KBM($no);    
+    }
+    ?>
 
         </div>
     </div>

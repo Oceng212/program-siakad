@@ -53,9 +53,8 @@
                 </strong>
 				</div>
 			<div class="col-9" style="width:75%; float:right;">
-				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="float:right;">
-				Update
-				</button>
+				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="float:right;">Update</button>
+        <a href="print-absen.php?kelas=<?= $kelas_utama?>" style="color: white; text-decoration:none; float: right; margin-right: 5px;" class="btn btn-success">Print Absen</a>
 				</div>
               </div>
               </div>

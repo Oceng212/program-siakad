@@ -31,7 +31,7 @@ while ($guru = mysqli_fetch_assoc($sql)){
                 </tr>
 
 				<tr>
-                    <th scope="col">Jam</th>
+                    <th class="col-3">Jam</th>
                     <th scope="col">Mata pelajaran</th>
                     <th scope="col">Kelas</th>
 				</tr>

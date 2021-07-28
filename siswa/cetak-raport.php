@@ -7,6 +7,12 @@ include_once '../database/koneksi.php';
 // mengambil data siswa yang bersangkutan  
 $NISN = $_GET["nisn"];
 $semester = $_GET["semester"];
+if ($semester == "ganjil"){
+	$semester = "Ganjil";
+} else {
+	$semester = "Genap";
+}
+
 $sql = "SELECT * FROM kelas_siswa WHERE NISN = '$NISN'";
 $exec = mysqli_query($koneksi,$sql);
 while ($rows = mysqli_fetch_assoc($exec)) {
@@ -37,12 +43,21 @@ $pdf->Cell(190,0.6,'','0','1','C',true);
 $pdf->Ln(5);
 
 $pdf->SetFont('Arial','B',14);
-$pdf->Cell(0,5,'E - Raport','0','1','C',false);
+$pdf->Cell(0,5,'Raport','0','1','C',false);
 $pdf->Ln(3);
 
 $pdf->SetFont('Arial','',9);
-$pdf->Cell(85,5,'Nama : '.$nama,'0','0','C',false);
-$pdf->Cell(105,5,'Kelas : '.$kelas,'0','0','C',false);
+$pdf->Cell(25,6,'','0','0','C',false);
+$pdf->Cell(40,6,'NISN : '.$NISN,'0','0','L',false);
+$pdf->Cell(71,6,'','0','0','C',false);
+$pdf->Cell(47,6,'Kelas : '.$kelas,'0','0','L',false);
+$pdf->Ln(7);
+
+$pdf->SetFont('Arial','',9);
+$pdf->Cell(25,6,'','0','0','C',false);
+$pdf->Cell(40,6,'Nama : '.$nama,'0','0','L',false);
+$pdf->Cell(71,6,'','0','0','C',false);
+$pdf->Cell(47,6,'Semester : '.$semester,'0','0','L',false);
 $pdf->Ln(7);
 
 $pdf->SetFont('Arial','B',9);
@@ -64,14 +79,14 @@ $pdf->Ln(2);
 
 $pdf->Ln(10);
 $pdf->SetFont('Arial','',9);
-$pdf->Cell(85,5,'Orang Tua/Wali','0','0','C',false);
-$pdf->Cell(85,5,'Walikelas '.$kelas,'0','0','C',false);
+$pdf->Cell(95,5,'Orang Tua/Wali','0','0','C',false);
+$pdf->Cell(95,5,'Walikelas '.$kelas,'0','0','C',false);
 $pdf->Ln(7);
 
 $pdf->Ln(10);
 $pdf->SetFont('Arial','',9);
-$pdf->Cell(85,5,'.........................','0','0','C',false);
-$pdf->Cell(85,5,$walikelas,'0','0','C',false);
+$pdf->Cell(95,5,'.........................','0','0','C',false);
+$pdf->Cell(95,5,$walikelas,'0','0','C',false);
 $pdf->Ln(7);
 
 $pdf->Output();

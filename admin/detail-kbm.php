@@ -71,9 +71,9 @@ if(isset($_POST["submit"])){
                     <td><?= $senin["jam"]?></td>
                     <td><?= $senin["mapel"]?></td>
                     <td><?= $senin["pengajar"]?></td>
-                    <td><a href="hapus-kbm.php?id=<?= $senin["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="badge bg-danger float-right ml-1"
+                    <td><a href="hapus-kbm.php?id=<?= $senin["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="btn btn-danger btn-sm float-right ml-1"
                     onclick = "return confirm('yakin?');">Hapus</a>
-  					<a href="ubah-kbm.php?id=<?= $senin["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="badge bg-primary float-right ml-1">ubah</a></td>
+  					<a href="ubah-kbm.php?id=<?= $senin["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="btn btn-primary btn-sm float-right ml-1">ubah</a></td>
 				</tr>
             <?php endwhile;?>
 			  			
@@ -94,9 +94,9 @@ if(isset($_POST["submit"])){
                     <td><?= $selasa["jam"]?></td>
                     <td><?= $selasa["mapel"]?></td>
                     <td><?= $selasa["pengajar"]?></td>
-                    <td><a href="hapus-kbm.php?id=<?= $selasa["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="badge bg-danger float-right ml-1"
+                    <td><a href="hapus-kbm.php?id=<?= $selasa["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="btn btn-danger btn-sm float-right ml-1"
                     onclick = "return confirm('yakin?');">Hapus</a>
-  					<a href="ubah-kbm.php?id=<?= $selasa["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="badge bg-primary float-right ml-1">ubah</a></td>
+                    <a href="ubah-kbm.php?id=<?= $selasa["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="btn btn-primary btn-sm float-right ml-1">ubah</a></td>
 				</tr>
             <?php endwhile;?>
 			  			
@@ -117,9 +117,9 @@ if(isset($_POST["submit"])){
                     <td><?= $rabu["jam"]?></td>
                     <td><?= $rabu["mapel"]?></td>
                     <td><?= $rabu["pengajar"]?></td>
-                    <td><a href="hapus-kbm.php?id=<?= $rabu["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="badge bg-danger float-right ml-1"
+                    <td><a href="hapus-kbm.php?id=<?= $rabu["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="btn btn-danger btn-sm float-right ml-1"
                     onclick = "return confirm('yakin?');">Hapus</a>
-                    <a href="ubah-kbm.php?id=<?= $rabu["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="badge bg-primary float-right ml-1">ubah</a></td>
+                    <a href="ubah-kbm.php?id=<?= $rabu["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="btn btn-primary btn-sm float-right ml-1">ubah</a></td>
                 </tr>
             <?php endwhile;?>
                         
@@ -140,9 +140,9 @@ if(isset($_POST["submit"])){
                     <td><?= $kamis["jam"]?></td>
                     <td><?= $kamis["mapel"]?></td>
                     <td><?= $kamis["pengajar"]?></td>
-                    <td><a href="hapus-kbm.php?id=<?= $kamis["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="badge bg-danger float-right ml-1"
+                    <td><a href="hapus-kbm.php?id=<?= $kamis["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="btn btn-danger btn-sm float-right ml-1"
                     onclick = "return confirm('yakin?');">Hapus</a>
-                    <a href="ubah-kbm.php?id=<?= $kamis["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="badge bg-primary float-right ml-1">ubah</a></td>
+                    <a href="ubah-kbm.php?id=<?= $kamis["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="btn btn-primary btn-sm float-right ml-1">ubah</a></td>
                 </tr>
             <?php endwhile;?>
                         
@@ -163,9 +163,9 @@ if(isset($_POST["submit"])){
                     <td><?= $jumat["jam"]?></td>
                     <td><?= $jumat["mapel"]?></td>
                     <td><?= $jumat["pengajar"]?></td>
-                    <td><a href="hapus-kbm.php?id=<?= $jumat["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="badge bg-danger float-right ml-1"
+                    <td><a href="hapus-kbm.php?id=<?= $jumat["id"]?>&kelas=<?=$kelas?>" style="color: white; text-decoration:none;" class="btn btn-danger btn-sm float-right ml-1"
                     onclick = "return confirm('yakin?');">Hapus</a>
-                    <a href="ubah-kbm.php?id=<?= $jumat["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="badge bg-primary float-right ml-1">ubah</a></td>
+                    <a href="ubah-kbm.php?id=<?= $jumat["id"]?>&kelas=<?=$kelas ?>" style="color: white; text-decoration:none;" class="btn btn-primary btn-sm float-right ml-1">ubah</a></td>
                 </tr>
             <?php endwhile;?>
                         
@@ -226,113 +226,125 @@ if(isset($_POST["submit"])){
                 <!-- mengelompokkan para guru berdasarkan mapel -->
 
                 <!-- penjasorkes -->
+                        <optgroup label = "Guru Penjasorkes">
                         <?php 
                         $sql_penjas = mysqli_query($koneksi,"SELECT * FROM jabatan_guru WHERE mapel='Penjasorkes'");
                         while($penjas = mysqli_fetch_assoc($sql_penjas)):
                         ?>
-                        <optgroup label = "Guru Penjasorkes">
                         <option value="<?= $penjas["nama"];?>"><?= $penjas["nama"];?></option>
-                        <optgroup label = "---------------------">
                         <?php endwhile;?>
+                        <optgroup label = "---------------------">
+                        
                 <!-- Matematika -->
+                        <optgroup label = "Guru Matematika">
                         <?php 
                         $sql_mtk = mysqli_query($koneksi,"SELECT * FROM jabatan_guru WHERE mapel='Matematika'");
                         while($mtk = mysqli_fetch_assoc($sql_mtk)):
                         ?>
-                        <optgroup label = "Guru Matematika">
                         <option value="<?= $mtk["nama"];?>"><?= $mtk["nama"];?></option>
-                        <optgroup label = "---------------------">
                         <?php endwhile;?>
+                        <optgroup label = "---------------------">
+                        
                 <!-- Bahasa Indonesia -->
+                        <optgroup label = "Bahasa Indonesia">
                         <?php 
                         $sql_indo = mysqli_query($koneksi,"SELECT * FROM jabatan_guru WHERE mapel='Bahasa Indonesia'");
                         while($indo = mysqli_fetch_assoc($sql_indo)):
                         ?>
-                        <optgroup label = "Bahasa Indonesia">
                         <option value="<?= $indo["nama"];?>"><?= $indo["nama"];?></option>
-                        <optgroup label = "---------------------">
                         <?php endwhile;?>
+                        <optgroup label = "---------------------">
+                        
                 <!-- Bahasa Inggris -->
+                        <optgroup label = "Bahasa Inggris">
                         <?php 
                         $sql_Inggris = mysqli_query($koneksi,"SELECT * FROM jabatan_guru WHERE mapel='Bahasa Inggris'");
                         while($Inggris = mysqli_fetch_assoc($sql_Inggris)):
                         ?>
-                        <optgroup label = "Bahasa Inggris">
                         <option value="<?= $Inggris["nama"];?>"><?= $Inggris["nama"];?></option>
-                        <optgroup label = "---------------------">
                         <?php endwhile;?>
+                        <optgroup label = "---------------------">
+                        
                 <!-- Seni Budaya -->
+                        <optgroup label = "Seni Budaya">
                         <?php 
                         $sql_senbud = mysqli_query($koneksi,"SELECT * FROM jabatan_guru WHERE mapel='Seni Budaya'");
                         while($senbud = mysqli_fetch_assoc($sql_senbud)):
                         ?>
-                        <optgroup label = "Seni Budaya">
                         <option value="<?= $senbud["nama"];?>"><?= $senbud["nama"];?></option>
-                        <optgroup label = "---------------------">
                         <?php endwhile;?>
+                        <optgroup label = "---------------------">
+                        
                 <!-- Fisika -->
+                        <optgroup label = "Fisika">
                         <?php 
                         $sql_fisika = mysqli_query($koneksi,"SELECT * FROM jabatan_guru WHERE mapel='Fisika'");
                         while($fisika = mysqli_fetch_assoc($sql_fisika)):
                         ?>
-                        <optgroup label = "Fisika">
                         <option value="<?= $fisika["nama"];?>"><?= $fisika["nama"];?></option>
-                        <optgroup label = "---------------------">
                         <?php endwhile;?>
+                        <optgroup label = "---------------------">
+                        
                 <!-- Kimia -->
+                        <optgroup label = "Kimia">
                         <?php 
                         $sql_Kimia = mysqli_query($koneksi,"SELECT * FROM jabatan_guru WHERE mapel='Kimia'");
                         while($Kimia = mysqli_fetch_assoc($sql_Kimia)):
                         ?>
-                        <optgroup label = "Kimia">
                         <option value="<?= $Kimia["nama"];?>"><?= $Kimia["nama"];?></option>
-                        <optgroup label = "---------------------">
                         <?php endwhile;?>
+                        <optgroup label = "---------------------">
+                        
                 <!-- Biologi -->
+                        <optgroup label = "Biologi">
                         <?php 
                         $sql_Biologi = mysqli_query($koneksi,"SELECT * FROM jabatan_guru WHERE mapel='Biologi'");
                         while($Biologi = mysqli_fetch_assoc($sql_Biologi)):
                         ?>
-                        <optgroup label = "Biologi">
                         <option value="<?= $Biologi["nama"];?>"><?= $Biologi["nama"];?></option>
-                        <optgroup label = "---------------------">
                         <?php endwhile;?>
+                        <optgroup label = "---------------------">
+                        
                 <!-- Agama -->
+                        <optgroup label = "Agama">
                         <?php 
                         $sql_Agama = mysqli_query($koneksi,"SELECT * FROM jabatan_guru WHERE mapel='Agama'");
                         while($Agama = mysqli_fetch_assoc($sql_Agama)):
                         ?>
-                        <optgroup label = "Agama">
                         <option value="<?= $Agama["nama"];?>"><?= $Agama["nama"];?></option>
-                        <optgroup label = "---------------------">
                         <?php endwhile;?>
+                        <optgroup label = "---------------------">
+                        
                 <!-- Ekonomi -->
+                        <optgroup label = "Ekonomi">
                         <?php 
                         $sql_Ekonomi = mysqli_query($koneksi,"SELECT * FROM jabatan_guru WHERE mapel='Ekonomi'");
                         while($Ekonomi = mysqli_fetch_assoc($sql_Ekonomi)):
                         ?>
-                        <optgroup label = "Ekonomi">
                         <option value="<?= $Ekonomi["nama"];?>"><?= $Ekonomi["nama"];?></option>
-                        <optgroup label = "---------------------">
                         <?php endwhile;?>
+                        <optgroup label = "---------------------">
+                        
                 <!-- Sosiologi -->
+                        <optgroup label = "Sosiologi">
                         <?php 
                         $sql_Sosiologi = mysqli_query($koneksi,"SELECT * FROM jabatan_guru WHERE mapel='Sosiologi'");
                         while($Sosiologi = mysqli_fetch_assoc($sql_Sosiologi)):
                         ?>
-                        <optgroup label = "Sosiologi">
                         <option value="<?= $Sosiologi["nama"];?>"><?= $Sosiologi["nama"];?></option>
-                        <optgroup label = "---------------------">
                         <?php endwhile;?>
+                        <optgroup label = "---------------------">
+                        
                 <!-- Sejarah -->
+                        <optgroup label = "Sejarah">
                         <?php 
                         $sql_Sejarah = mysqli_query($koneksi,"SELECT * FROM jabatan_guru WHERE mapel='Sejarah'");
                         while($Sejarah = mysqli_fetch_assoc($sql_Sejarah)):
                         ?>
-                        <optgroup label = "Sejarah">
                         <option value="<?= $Sejarah["nama"];?>"><?= $Sejarah["nama"];?></option>
-                        <optgroup label = "---------------------">
                         <?php endwhile;?>
+                        <optgroup label = "---------------------">
+                        
 
                 </optgroup>
           </select>

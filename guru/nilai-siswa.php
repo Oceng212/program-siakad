@@ -125,7 +125,7 @@
         <td><?= $rows["pengetahuan"]?></td>
 				<td>
 					<div class="d-grid gap-2 d-md-block">
-						<a class="btn btn-success btn-sm" href="tambah-raport.php?kelas=<?= $kelas_utama;?>&nisn=<?= $rows["NISN"]?>&nama=<?= $rows["nama"] ?>">Tambah</a>
+						<a class="btn btn-danger btn-sm" href="hapus-nilai.php?nisn=<?= $rows["NISN"]?>&kelas=<?= $kelas_utama?>&semester=<?= $semester?>&mapel=<?= $mapel?>">Hapus</a>
   						<a class="btn btn-warning btn-sm" href="ubah-raport.php?id=<?= $rows["id"]?>&semester=<?= $semester ?>">Ubah</a>
 					</div>
 				</td>

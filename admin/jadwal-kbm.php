@@ -61,7 +61,12 @@ if(isset($_POST["ubah"])){
 				<tr>
 				<td><?= $rows["kelas"];?></td>
 				<td><?= $rows["walikelas"];?></td>
-				<td><a href="detail-kbm.php?kelas=<?= $rows["kelas"];?>" style="color: white; text-decoration:none;" class="btn btn-primary btn-sm">Lihat</a>
+				<td><a href="detail-kbm.php?kelas=<?= $rows["kelas"];?>" style="color: white; text-decoration:none;" class="btn btn-primary btn-sm">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 20 20">
+				<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+				<path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+				</svg>
+				Lihat</a>
   				</li></td>
                 
 			<?php endwhile;?>

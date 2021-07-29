@@ -23,8 +23,8 @@ include_once '../templates/header.php';
             <h5 class="card-title text-center">Kelas X</h5>
             <p class="card-text ">Pilih Semester :</p>
             <div class="d-grid gap-2 col-6 mx-auto" style="width:100%;">
-            <a href="raport.php?semester=ganjil" class="btn btn-success">Ganjil</a>
-            <a href="raport.php?semester=genap" class="btn btn-success">Genap</a>
+            <a href="raport.php?semester=ganjil&kelas=x" class="btn btn-success">Ganjil</a>
+            <a href="raport.php?semester=genap&kelas=x" class="btn btn-success">Genap</a>
             </div>
           </div>
         </div>
@@ -35,8 +35,8 @@ include_once '../templates/header.php';
           <h5 class="card-title text-center">Kelas XI</h5>
             <p class="card-text ">Pilih Semester :</p>
             <div class="d-grid gap-2 col-6 mx-auto" style="width:100%;">
-            <a href="raport.php?semester=ganjil" class="btn btn-success">Ganjil</a>
-            <a href="raport.php?semester=genap" class="btn btn-success">Genap</a>
+            <a href="raport.php?semester=ganjil&kelas=xi" class="btn btn-success">Ganjil</a>
+            <a href="raport.php?semester=genap&kelas=xi" class="btn btn-success">Genap</a>
             </div>
           </div>
         </div>
@@ -47,8 +47,8 @@ include_once '../templates/header.php';
           <h5 class="card-title text-center">Kelas XII</h5>
             <p class="card-text ">Pilih Semester :</p>
             <div class="d-grid gap-2 col-6 mx-auto" style="width:100%;">
-            <a href="raport.php?semester=ganjil" class="btn btn-success">Ganjil</a>
-            <a href="raport.php?semester=genap" class="btn btn-success">Genap</a>
+            <a href="raport.php?semester=ganjil&kelas=xii" class="btn btn-success">Ganjil</a>
+            <a href="raport.php?semester=genap&kelas=xii" class="btn btn-success">Genap</a>
             </div>
           </div>
         </div>

@@ -5,22 +5,35 @@ include_once '../templates/header.php';
 // mengambil data siswa yang bersangkutan  
 $NISN = $_SESSION["nisn/nip"];
 $semester = $_GET["semester"];
-$sql = "SELECT * FROM kelas_siswa WHERE NISN = '$NISN'";
+$indexKelas = $_GET["kelas"];
+$sql = "SELECT * FROM nilai_siswa WHERE NISN = '$NISN' AND kelas LIKE '%".$indexKelas."%'";
 $exec = mysqli_query($koneksi,$sql);
-while ($rows = mysqli_fetch_assoc($exec)) {
-	$nama = $rows["nama"];
-	$kelas = $rows["kelas"];
-}
+$result = mysqli_num_rows($exec);
+if ($result>0){
+  while ($rows = mysqli_fetch_assoc($exec)) {
+    $nama = $rows["nama"];
+    $kelas = $rows["kelas"];
+  }
 
-// mengambil data kelas 
-$sql_kelas = mysqli_query($koneksi,"SELECT * FROM data_kelas WHERE kelas = '$kelas'");
-while ($data_kelas = mysqli_fetch_assoc($sql_kelas)){
+  // mengambil data kelas 
+  $sql_kelas = mysqli_query($koneksi,"SELECT * FROM data_kelas WHERE kelas = '$kelas'");
+  while ($data_kelas = mysqli_fetch_assoc($sql_kelas)){
 	$walikelas = $data_kelas["walikelas"];
+  }
+
+  //mengambil data nilai siswa
+  $data = "SELECT * FROM nilai_siswa WHERE NISN = '$NISN' AND kelas ='$kelas' AND semester ='$semester'";
+  $exec_data = mysqli_query($koneksi,$data);
+
+
+} else {
+  echo "<script> 
+    alert('Data tidak ditemukan ! Silahkan hubungi Admin');
+    document.location.href = 'raport-index.php';
+  </script>";
 }
 
-//mengambil data nilai siswa
-$data = "SELECT * FROM nilai_siswa WHERE NISN = '$NISN' AND kelas ='$kelas' AND semester ='$semester'";
-$exec_data = mysqli_query($koneksi,$data);
+
 
 
 ?>

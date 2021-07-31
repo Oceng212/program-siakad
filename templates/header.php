@@ -88,7 +88,9 @@ $nim_nip = $_SESSION["nisn/nip"];
 
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand nav-atas" href="index.php">SIAKAD SMA Tadika Mesra</a>
+      <img src="../img/logo sekolah.png" style="width: 65px; height: 65px;" alt="">
+      <a class="navbar-brand nav-atas" href="index.php">
+      SIAKAD SMA Tadika Mesra</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -97,8 +99,8 @@ $nim_nip = $_SESSION["nisn/nip"];
           <li class="nav-item">
           </li>
         </ul>
-        <span class="navbar-text" style="margin-right:12px; color: white;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+        <span class="navbar-text" style="margin-right:12px; color: white; text-transform: capitalize;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
           </svg> <?= $user?>
@@ -110,7 +112,7 @@ $nim_nip = $_SESSION["nisn/nip"];
   
   <div class="container-fluid">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-secondary sidebar collapse">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-secondary sidebar collapse mt-2">
       <div class="position-sticky pt-5">
         <ul class="nav flex-column">
           <!-- mode header (sesuai pengguna) -->

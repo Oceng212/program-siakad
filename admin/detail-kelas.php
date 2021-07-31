@@ -73,7 +73,7 @@
 
 <div class="container" style="margin-left:20px;">
 		<div class="row">
-			<table style = "text-align:center;">
+			<table class="table table-borderless" style = "text-align:center;">
 				<tr>
 					<th>Cek</th>
 					<th>NIP</th>

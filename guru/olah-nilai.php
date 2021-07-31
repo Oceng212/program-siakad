@@ -49,6 +49,7 @@ if(isset($_POST["ubah"])){
 <br>
 
 <div class="container">
+	<h6 style="color:red;">*) Pilih Sesuai Kelas yang Diajar</h6>
  <div class="row">
  	<?php while($rows = mysqli_fetch_assoc($exec)):?>
       <div class="col-md mt-3">

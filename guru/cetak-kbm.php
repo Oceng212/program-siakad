@@ -4,17 +4,17 @@ include "../fpdf/fpdf.php";
 // membuat koneksi
 include_once '../database/koneksi.php';
 
-// mengambil data siswa yang bersangkutan  
-$nisn = $_GET["nisn"];
+//mengambil NIP di $_SESSION
+$nip = $_GET["nip"];
 
-$sql = "SELECT * FROM kelas_siswa WHERE NISN = '$nisn'";
-$exec = mysqli_query($koneksi,$sql);
-while ($rows = mysqli_fetch_assoc($exec)) {
-	$kelas = $rows["kelas"];
-}
+//mengambil data nama berdasarkan NIP 
+$sql = mysqli_query($koneksi,"SELECT * FROM jabatan_guru WHERE NIP = '$nip'");
+while ($guru = mysqli_fetch_assoc($sql)){
+    $nama = $guru["nama"];
+} 
 
 function JamKBM($jam){
-	global $kelas;
+	global $nama;
 	global $koneksi;
 	global $pdf;
 	switch ($jam) {
@@ -70,14 +70,21 @@ function JamKBM($jam){
 			header('Location : index.php');
 		break;
 	}
-	$sql_kbm = "SELECT * FROM pelajaran WHERE kelas='$kelas' AND jam='$jam' ORDER BY hari DESC";
+	$sql_kbm = "SELECT * FROM pelajaran WHERE pengajar='$nama' AND jam='$jam' ORDER BY hari DESC";
 	$exec_kbm = mysqli_query($koneksi,$sql_kbm);
 	$pdf->Ln(4);
 	$pdf->SetFont('Arial','',8);
 	$pdf->Cell(32,6,$jam,1,0,'C');
 	while ($data = mysqli_fetch_assoc($exec_kbm)){
-		$pdf->Cell(31,6,$data['mapel'],1,0,'C');
+            $pdf->Cell(31,6,$data["kelas"],1,0,'C');
 	}
+
+	
+    
+    
+
+    // mengisi kotak yang kosong 
+   
 
 	// ini waktu istirahat pertama
 	if ($jam == "10:00-10:15") {
@@ -106,7 +113,7 @@ $pdf->Cell(190,0.6,'','0','1','C',true);
 $pdf->Ln(5);
 
 $pdf->SetFont('Arial','B',14);
-$pdf->Cell(0,5,'KBM '.$kelas,'0','1','C',false);
+$pdf->Cell(0,5,'Jadwal KBM ','0','1','C',false);
 $pdf->Ln(3);
 
 $pdf->SetFont('Arial','B',9);
